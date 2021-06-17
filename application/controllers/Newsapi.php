@@ -15,9 +15,9 @@ class Newsapi extends RestController {
 	public function index_get($id = 0)
 	{
         if(!empty($id)){
-            $data = $this->db->get_where('viadoy_news', ['id' => $id])->row_array();
+            $data = $this->db->get_where('news', ['id' => $id])->row_array();
         }else{
-            $data = $this->db->get('viadoy_news')->result();
+            $data = $this->db->get('news')->result();
         }
         $this->response($data, 200);
 
